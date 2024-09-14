@@ -23,7 +23,7 @@ const StudentsTable = ({
   const getStateLabel = (emotion: number) => {
     switch (emotion) {
       case 0: 
-        return "Хмурый"
+        return "Неизвестно"
       case 1:
         return 'Злой'; // Angry
       case 2:
@@ -35,10 +35,24 @@ const StudentsTable = ({
       case 7:
         return 'Удивлённый'; // Surprise
       default:
-        return 'Мерзкий'; // Unknown
+        return 'Неизвестно'; // Unknown
     }
   };
   
+  const getStudyingStateLabel = (emotion: number) => {
+    switch (emotion) {
+      case 0: 
+        return "Неизвестно"
+      case 1:
+        return 'Нормально'; // Angry
+      case 2:
+        return 'Прекрасно'; // Disgus
+      default:
+        return 'Неизвестно'; // Unknown
+    }
+  };
+  
+
   const getColorForState = (state: number) => {
     switch (state) {
         case 2:
@@ -82,7 +96,7 @@ const StudentsTable = ({
                 <Tag color={getColorForState(student.overallHealth)}>{getStateLabel(student.overallHealth)}</Tag>
               </CommonTable.Cell>
               <CommonTable.Cell>
-                <Tag color={getColorForState(student.overallKundelik)}>{getStateLabel(student.overallKundelik)}</Tag>
+                <Tag color={getColorForState(student.overallKundelik)}>{getStudyingStateLabel(student.overallKundelik)}</Tag>
               </CommonTable.Cell>
               <CommonTable.Cell>
                 <Tag color={getColorForState(student.overallMood)}>{getStateLabel(student.overallMood)}</Tag>
