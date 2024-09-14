@@ -22,22 +22,20 @@ const StudentsTable = ({
 }: Props) => {
   const getStateLabel = (emotion: number) => {
     switch (emotion) {
+      case 0: 
+        return "Хмурый"
       case 1:
         return 'Злой'; // Angry
       case 2:
         return 'Отвратительно'; // Disgust
       case 3:
         return 'Страх'; // Fear
-      case 4:
-        return 'Счастливый'; // Happy
-      case 5:
-        return 'Нейтрально'; // Neutral
       case 6:
         return 'Грустный'; // Sad
       case 7:
         return 'Удивлённый'; // Surprise
       default:
-        return 'Неизвестно'; // Unknown
+        return 'Мерзкий'; // Unknown
     }
   };
   
